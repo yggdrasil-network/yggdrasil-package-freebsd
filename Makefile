@@ -44,7 +44,6 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PKGNAME=${PORTNAME} PKGVER=${PORTVERSION} ./build
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/yggdrasil ${STAGEDIR}${PREFIX}/bin/yggdrasil
 	${INSTALL_PROGRAM} ${WRKSRC}/yggdrasilctl ${STAGEDIR}${PREFIX}/bin/yggdrasilctl
 
