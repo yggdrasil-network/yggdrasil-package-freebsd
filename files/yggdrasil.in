@@ -39,7 +39,7 @@ yggdrasil_prestart()
 		/sbin/ifconfig ${tap_name} create || logger -s -t yggdrasil "Failed to create ${tap_name} adapter"
 	)
 
-	test ! -d /var/run/yggdrasil && mkdir -p /var/run/yggdrasil
+	mkdir -p /var/run/yggdrasil
 }
 
 yggdrasil_start()
@@ -48,8 +48,6 @@ yggdrasil_start()
 		logger -s -t yggdrasil "Creating ${tap_name} adapter"
 		/sbin/ifconfig ${tap_name} create || logger -s -t yggdrasil "Failed to create ${tap_name} adapter"
 	)
-
-	test ! -d /var/run/yggdrasil && mkdir -p /var/run/yggdrasil
 
 	logger -s -t yggdrasil "Starting yggdrasil"
 	${command} ${command_args} %%PREFIX%%/bin/yggdrasil -useconffile %%PREFIX%%/etc/yggdrasil.conf \
