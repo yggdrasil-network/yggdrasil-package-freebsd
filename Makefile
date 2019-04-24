@@ -28,15 +28,11 @@ pre-build:
 	@${REINPLACE_CMD} -e 's/set -ef/set -f/' ${WRKSRC}/build
 
 do-build:
-	cd ${WRKSRC} && PKGNAME=${PORTNAME} PKGVER=${PORTVERSION} ./build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PKGNAME=${PORTNAME} PKGVER=${PORTVERSION} ./build
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/yggdrasil ${STAGEDIR}${PREFIX}/bin/yggdrasil
 	${INSTALL_PROGRAM} ${WRKSRC}/yggdrasilctl ${STAGEDIR}${PREFIX}/bin/yggdrasilctl
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yggdrasil
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yggdrasilctl
 
 .include <bsd.port.mk>
