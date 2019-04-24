@@ -33,6 +33,7 @@ GH_TUPLE=	\
 
 PLIST_FILES=	bin/yggdrasil \
 		bin/yggdrasilctl
+MAKE_ENV+=      GOFLAGS=-mod=vendor
 
 USE_RC_SUBR=	yggdrasil
 
@@ -40,7 +41,7 @@ pre-build:
 	@${REINPLACE_CMD} -e 's/set -ef/set -f/' ${WRKSRC}/build
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PKGNAME=${PORTNAME} PKGVER=${PORTVERSION} GOFLAGS=-mod=vendor ./build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PKGNAME=${PORTNAME} PKGVER=${PORTVERSION} ./build
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
