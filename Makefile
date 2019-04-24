@@ -18,6 +18,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yggdrasil-network
 GH_PROJECT=	yggdrasil-go
 GH_TAGNAME=	v0.3.5
+GH_TUPLE=	\
+		docker:libcontainer:v2.2.1:docker_libcontainer/vendor/github.com/docker/libcontainer \
+		golang:crypto:505ab14:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:6105869:golang_net/vendor/golang.org/x/net \
+		golang:sys:70b957f:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
+		gologme:log:4e5d8cc:gologme_log/vendor/github.com/gologme/log \
+		hjson:hjson-go:a25ecf6:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
+		kardianos:minwinsvc:cad6b2b:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
+		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		songgao:packets:549a10c:songgao_packets/vendor/github.com/songgao/packets \
+		yggdrasil-network:water:f732c88:yggdrasil_network_water/vendor/github.com/yggdrasil-network/water
 
 PLIST_FILES=	bin/yggdrasil \
 		bin/yggdrasilctl
