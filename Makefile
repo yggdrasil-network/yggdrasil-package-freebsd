@@ -1,39 +1,39 @@
-# $FreeBSD$
+# $FreeBSD: head/net/yggdrasil/Makefile 514143 2019-10-09 12:17:15Z bapt $
 
 PORTNAME=	yggdrasil
-PORTVERSION=	0.3.5
-CATEGORIES=	net ipv6
-MASTER_SITES=	https://github.com/yggdrasil-network/yggdrasil-go/
-DIST_SUBDIR=	yggdrasil
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.6
+CATEGORIES=	net
 
-MAINTAINER=	neilalexander@users.noreply.github.com
+MAINTAINER=	freebsd@neilalexander.dev
 COMMENT=	Experimental end-to-end encrypted self-arranging IPv6 network
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.11:lang/go
-
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	yggdrasil-network
 GH_PROJECT=	yggdrasil-go
-GH_TAGNAME=	v0.3.5
 GH_TUPLE=	\
 		docker:libcontainer:v2.2.1:docker_libcontainer/vendor/github.com/docker/libcontainer \
-		golang:crypto:505ab14:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:6105869:golang_net/vendor/golang.org/x/net \
-		golang:sys:70b957f:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
-		gologme:log:4e5d8cc:gologme_log/vendor/github.com/gologme/log \
-		hjson:hjson-go:a25ecf6:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
-		kardianos:minwinsvc:cad6b2b:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
+		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
+		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		gologme:log:4e5d8ccb38e8:gologme_log/vendor/github.com/gologme/log \
+		hashicorp:go-syslog:v1.0.0:hashicorp_go_syslog/vendor/github.com/hashicorp/go-syslog \
+		hjson:hjson-go:a25ecf6bd222:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
+		kardianos:minwinsvc:cad6b2b879b0:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		songgao:packets:549a10c:songgao_packets/vendor/github.com/songgao/packets \
-		yggdrasil-network:water:f732c88:yggdrasil_network_water/vendor/github.com/yggdrasil-network/water
+		songgao:packets:549a10cd4091:songgao_packets/vendor/github.com/songgao/packets \
+		yggdrasil-network:water:a16161896c34:yggdrasil_network_water/vendor/github.com/yggdrasil-network/water
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
+
+MAKE_ENV+=	GOFLAGS=-mod=vendor
 
 PLIST_FILES=	bin/yggdrasil \
 		bin/yggdrasilctl
-MAKE_ENV+=      GOFLAGS=-mod=vendor
 
 USE_RC_SUBR=	yggdrasil
 
