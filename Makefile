@@ -19,7 +19,7 @@ GH_TUPLE=	\
 		Arceliar:ironwood:6ad55cae5031:arceliar_ironwood/vendor/github.com/Arceliar/ironwood \
 		Arceliar:phony:dde1a8dca979:arceliar_phony/vendor/github.com/Arceliar/phony \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		cheggaaa:pb:v3.0.8:cheggaaa_pb/vendor/github.com/cheggaaa/pb/v3 \
+		cheggaaa:pb:v3.0.8:cheggaaa_pb_v3/vendor/github.com/cheggaaa/pb \
 		fatih:color:v1.12.0:fatih_color/vendor/github.com/fatih/color \
 		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:4a448f8816b3:golang_net/vendor/golang.org/x/net \
@@ -35,7 +35,9 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		vishvananda:netlink:v1.1.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
-		vishvananda:netns:2eb08e3e575f:vishvananda_netns/vendor/github.com/vishvananda/netns
+		vishvananda:netns:2eb08e3e575f:vishvananda_netns/vendor/github.com/vishvananda/netns \
+		wireguard:wireguard-go:f87e87af0d9a:wireguard_wireguard_go/vendor/golang.zx2c4.com/wireguard \
+		wireguard:wireguard-go:v0.4.12:wireguard_wireguard_go_1/vendor/golang.zx2c4.com/wireguard/windows
 USE_RC_SUBR=	yggdrasil
 
 GO_TARGET=	./cmd/yggdrasil \
